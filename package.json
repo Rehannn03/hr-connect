@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Backend for HR connect",
   "main": "index.js",
-  "type": "module",
+  "type": "module",,
   "scripts": {
     "dev": "nodemon src/index.js"
   },

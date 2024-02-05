@@ -1,4 +1,5 @@
-import { makeUser,loginUser,logoutUser, changePassword } from "../controllers/user.controller.js";
+import { loginUser,logoutUser, changePassword } from "../controllers/user.controller.js";
+import { makeUser } from "../controllers/admin.controller.js";}
 import {Router} from 'express'
 import { upload } from "../middleware/multer.middleware.js";
 import verifyJWT from "../middleware/auth.midleware.js";
