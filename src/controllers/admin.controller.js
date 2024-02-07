@@ -1,9 +1,10 @@
-import { User } from "../model/users.model"
+import { User } from "../model/users.model.js"
 import { asyncHandler } from "../Utils/asyncHandler.js"
 import { ApiError } from "../Utils/apiError.js"
 import { ApiResponse } from "../Utils/apiResponse.js"
 import uploadOnCloudinary from '../Utils/cloudinary.js'
-const makeUser=asyncHandler(async(req,res)=>{
+import { Leave } from "../model/leave.model.js"
+const addUser=asyncHandler(async(req,res)=>{
     const {username,password,role,email,phone,address}=req.body
    
     const existingUser=await User.findOne({username})
@@ -36,6 +37,29 @@ const makeUser=asyncHandler(async(req,res)=>{
     )
 })
 
+const viewInfo=asyncHandler(async(req,res)=>{
+    const user=await User.findById(req.user._id).select('-password')
+
+    return res
+    .status(200)
+    .json(
+        new ApiResponse(
+            200,
+            {
+                user
+            },
+            "User Info"
+        )
+    
+    )
+})
+
+const leaveApplication=asyncHandler(async(req,res)=>{
+    const leave = Leave.findById(req.user._id)
+
+
+})
 export {
-    makeUser
+    addUser,
+    viewInfo
 }

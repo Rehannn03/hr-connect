@@ -13,6 +13,7 @@ const userSchema=new Schema({
     role:{
         type:String,
         require:true,
+        enum:['admin','employee']
     },
     email:{
         type:String,
@@ -24,6 +25,18 @@ const userSchema=new Schema({
     },
     address:{
         type:String,
+        require:true
+    },
+    department:{
+        type:String,
+        require:true
+    },
+    designation:{
+        type:String,
+        require:true
+    },
+    currentSalary:{
+        type:Number,
         require:true
     },
     profilePicture:{

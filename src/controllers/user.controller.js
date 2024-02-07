@@ -10,7 +10,6 @@ const loginUser= asyncHandler(async(req,res)=>{
     //If the password is correct, generate a token
     //Send the token to the user
     const {username,password,role}=req.body
-   
     const user = await User.findOne({username}) 
     if(!user){
         throw new ApiError(404,'User not found')
