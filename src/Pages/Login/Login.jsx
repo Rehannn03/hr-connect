@@ -2,11 +2,14 @@ import React from 'react'
 import { useState } from 'react'
 import "./Login.css"
 import { useNavigate } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import axios from 'axios'
+
 function Login() {
     const [uname, setUname] = useState("")
     const [psw, setPsw] = useState("")
     const [role, setRole] = useState("admin")
+    const [loggedIn, setLoggedIn] = useState(false)
     const navigate = useNavigate()
     
     const submit=(e)=>{
@@ -18,7 +21,14 @@ function Login() {
         role:role
       }).then((res)=>{
         console.log(res.data)
-        const response =res
+        if(res.data.statusCode===200){
+          localStorage.setItem("accessToken",res.data.data.user)
+          localStorage.setItem("authenticated",true)
+          navigate("/dashboard")
+        }
+        else{
+          alert("Invalid Credentials")
+        }
     })}
   return (
     

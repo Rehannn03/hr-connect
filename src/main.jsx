@@ -8,8 +8,10 @@ import About from './Pages/About.jsx'
 import Contact from './Pages/Contact.jsx'
 import Service from './Pages/Service.jsx'
 import Login from './Pages/Login/Login.jsx'
+import Dashboard from './Pages/Dashboard/Dashboard.jsx'
 const router = createBrowserRouter(
   createRoutesFromElements(
+    <>
     <Route path="/" element={<App/>}>
       <Route path="" element={<Home/>}/>
       <Route path="about" element={<About/>}/>
@@ -19,6 +21,10 @@ const router = createBrowserRouter(
       
 
     </Route>
+    <Route path='/dashboard' element={<Dashboard/>}>
+
+    </Route>
+    </>
   )
 )
 
