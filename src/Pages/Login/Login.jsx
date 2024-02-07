@@ -2,33 +2,24 @@ import React from 'react'
 import { useState } from 'react'
 import "./Login.css"
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 function Login() {
     const [uname, setUname] = useState("")
     const [psw, setPsw] = useState("")
-    const [role, setRole] = useState("")
-
-
+    const [role, setRole] = useState("admin")
+    const navigate = useNavigate()
+    
     const submit=(e)=>{
       e.preventDefault();
-
       //api call
-      axios.post("http://localhost:5000/login",{
+      axios.post("http://localhost:3000/api/v1/users/login",{
         username:uname,
         password:psw,
         role:role
       }).then((res)=>{
         console.log(res.data)
-        if(res.data.status==="success"){
-          alert("Login Success")
-          localStorage.setItem("token",res.data.token)
-          localStorage.setItem("role",res.data.role)
-          useNavigate("/dashboard")
-        }else{
-          alert("Login Failed")
-        }
-      }
-
-      )}
+        const response =res
+    })}
   return (
     
    <div className='w-screen h-screen bg-slate-800 py-4'>
@@ -73,7 +64,7 @@ function Login() {
               onChange={(e) => setRole(e.target.value)}
               >
               <option value="admin">Admin</option>
-              <option value="user">User</option>
+              <option value="employee">Employee</option>
             </select>
           </div>
           <div className="text-center mt-3">
