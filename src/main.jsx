@@ -8,7 +8,8 @@ import About from './Pages/About.jsx'
 import Contact from './Pages/Contact.jsx'
 import Service from './Pages/Service.jsx'
 import Login from './Pages/Login/Login.jsx'
-import Dashboard from './Pages/Dashboard/Dashboard.jsx'
+import Dashboard from './Layout/Dashboard/Dashboard.jsx'
+import Layout from './Layout/Layout.jsx'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
@@ -21,8 +22,8 @@ const router = createBrowserRouter(
       
 
     </Route>
-    <Route path='/dashboard' element={<Dashboard/>}>
-
+    <Route path='/dashboard' element={<Layout/>}>
+    <Route index element={<Dashboard/>}/>
     </Route>
     </>
   )

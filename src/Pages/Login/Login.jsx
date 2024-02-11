@@ -24,6 +24,7 @@ function Login() {
         if(res.data.statusCode===200){
           localStorage.setItem("accessToken",res.data.data.user)
           localStorage.setItem("authenticated",true)
+          localStorage.setItem("name",uname)
           navigate("/dashboard")
         }
         else{

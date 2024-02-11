@@ -4,12 +4,12 @@ import { Navigate } from "react-router-dom";
 function Dashboard() {
   const [loggedIn, setLoggedIn] = useState(false);
   const loginUser = localStorage.getItem("authenticated");
-  
+  const username=localStorage.getItem("name")
   if(loginUser){
     return(
         <div>
-            <h1>
-                Welcome to Dashboard
+            <h1 className="text-center bg-slate-500">
+                Welcome {username}
             </h1>
         </div>
     )
