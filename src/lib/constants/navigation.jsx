@@ -8,47 +8,53 @@ import {
 	HiOutlineQuestionMarkCircle,
 	HiOutlineCog
 } from 'react-icons/hi'
-
+import { CiLogout } from "react-icons/ci";
 export const DASHBOARD_SIDEBAR_LINKS = [
 	{
-		key: 'dashboard',
+		key: 1,
 		label: 'Dashboard',
-		path: '/',
+		path: '/dashboard',
 		icon: <HiOutlineViewGrid />
 	},
 	{
-		key: 'products',
-		label: 'Products',
-		path: '/products',
+		key: 2,
+		label: 'Apply leave',
+		path: '/dashboard/applyleave',
 		icon: <HiOutlineCube />
 	},
 	{
-		key: 'orders',
+		key:3,
 		label: 'Orders',
-		path: '/orders',
+		path: '/dashboard/orders',
 		icon: <HiOutlineShoppingCart />
 	},
 	{
-		key: 'customers',
+		key: 4,
 		label: 'Customers',
-		path: '/customers',
+		path: '/dashboard/customers',
 		icon: <HiOutlineUsers />
 	},
 	{
-		key: 'transactions',
+		key: 5,
 		label: 'Transactions',
-		path: '/transactions',
+		path: '/dashboard/transactions',
 		icon: <HiOutlineDocumentText />
 	},
 	{
-		key: 'messages',
+		key: 6,
 		label: 'Messages',
-		path: '/messages',
+		path: '/dashboard/messages',
 		icon: <HiOutlineAnnotation />
 	}
 ]
 
 export const DASHBOARD_SIDEBAR_BOTTOM_LINKS = [
+	{
+		key: 'logout',
+		label: 'logout',
+		path: '/logout',
+		icon: <CiLogout />
+	},
 	{
 		key: 'settings',
 		label: 'Settings',

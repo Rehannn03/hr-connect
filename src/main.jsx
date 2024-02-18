@@ -3,27 +3,22 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { RouterProvider, Routes, createBrowserRouter, createRoutesFromElements,Route } from 'react-router-dom'
-import Home from './Pages/Home.jsx'
-import About from './Pages/About.jsx'
-import Contact from './Pages/Contact.jsx'
-import Service from './Pages/Service.jsx'
 import Login from './Pages/Login/Login.jsx'
 import Dashboard from './Layout/Dashboard/Dashboard.jsx'
 import Layout from './Layout/Layout.jsx'
+import ApplyLeave from './Pages/Apply Leave/ApplyLeave.jsx'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
     <Route path="/" element={<App/>}>
-      <Route path="" element={<Home/>}/>
-      <Route path="about" element={<About/>}/>
-      <Route path="contact" element={<Contact/>}/>
-      <Route path="service" element={<Service/>}/>
-      <Route path="login" element={<Login/>}/>
+    <Route index element={<Login/>}/>
+    <Route path='logout' element={<Login/>}/>
       
 
     </Route>
     <Route path='/dashboard' element={<Layout/>}>
     <Route index element={<Dashboard/>}/>
+    <Route path='applyleave' element={<ApplyLeave/>}/>
     </Route>
     </>
   )

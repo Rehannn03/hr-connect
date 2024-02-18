@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
 function Dashboard() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  
   const loginUser = localStorage.getItem("authenticated");
+  
   const username=localStorage.getItem("name")
-  if(loginUser){
+
+  
+  if(loginUser==="true"){
     return(
         <div>
             <h1 className="text-center bg-slate-500">
@@ -15,8 +18,8 @@ function Dashboard() {
     )
   }
   else{
-    setLoggedIn(false)
-    return <Navigate to="/login" />;
+    
+    return <Navigate to="/" />;
   }
   
 }
