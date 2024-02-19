@@ -54,12 +54,36 @@ const viewInfo=asyncHandler(async(req,res)=>{
     )
 })
 
+const getLeaves=asyncHandler(async(req,res)=>{
+    const leaves=await Leave.find()
+    return res.status(200).json(
+        new ApiResponse(
+            200,
+            {
+                leaves
+            },
+            "Leaves"
+        )
+    )
+})
+
 const leaveApplication=asyncHandler(async(req,res)=>{
-    const leave = Leave.findById(req.user._id)
+    const leave = Leave.find()
+    const {status}=req.body
+
+    if(status==='approved'){
+        leave.status='approved'
+    }
+    else if(status==='rejected'){
+        leave.status='rejected'
+    }
     
+
+
 
 })
 export {
     addUser,
-    viewInfo
+    viewInfo,
+    getLeaves,
 }
