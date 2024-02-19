@@ -12,8 +12,9 @@ app.use(cors());
 
 //user routes
 import userRouter from './routes/user.routes.js';
-
+import employeeRouter from './routes/employee.routes.js';
 app.use('/api/v1/users', userRouter);
 
+app.use('/api/v1/employees', employeeRouter);
 
 export default app;

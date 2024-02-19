@@ -34,7 +34,9 @@ const loginUser= asyncHandler(async(req,res)=>{
 
     const options={
         httpOnly:true,
-        secure:true
+        secure:true,
+        sameSite:'None',
+        domain:'localhost',
     }
     return res
     .status(200)
@@ -91,4 +93,16 @@ const changePassword=asyncHandler(async(req,res)=>{
 
 })
 
-export {loginUser,logoutUser,changePassword} 
+const getUser=asyncHandler((req,res)=>{
+    return res.status(200).json(
+        new ApiResponse(
+            200,
+            {
+                user:req.user
+            },
+            "User Fetched Successfully"
+        )
+    )
+})
+
+export {loginUser,logoutUser,changePassword,getUser} 

@@ -56,7 +56,7 @@ const viewInfo=asyncHandler(async(req,res)=>{
 
 const leaveApplication=asyncHandler(async(req,res)=>{
     const leave = Leave.findById(req.user._id)
-
+    
 
 })
 export {
