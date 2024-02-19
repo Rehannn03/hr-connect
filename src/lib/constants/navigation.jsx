@@ -24,8 +24,8 @@ export const DASHBOARD_SIDEBAR_LINKS = [
 	},
 	{
 		key:3,
-		label: 'Orders',
-		path: '/dashboard/orders',
+		label: 'Leave Approval',
+		path: '/dashboard/leaveapproval',
 		icon: <HiOutlineShoppingCart />
 	},
 	{

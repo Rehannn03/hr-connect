@@ -4,8 +4,7 @@ import "./Login.css";
 import { useNavigate } from "react-router-dom";
 
 import img from "../../assets/img.jpeg";
-import axios from "axios";
-import Navbar from "../../components/Navbar";
+import axios from "axios";  
 
 function Login() {
   const [uname, setUname] = useState("");

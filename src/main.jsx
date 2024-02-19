@@ -7,6 +7,7 @@ import Login from './Pages/Login/Login.jsx'
 import Dashboard from './Layout/Dashboard/Dashboard.jsx'
 import Layout from './Layout/Layout.jsx'
 import ApplyLeave from './Pages/Apply Leave/ApplyLeave.jsx'
+import LeaveApprovalPage from './Pages/Leave Approval/LeaveApproval.jsx'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
     <Route path='/dashboard' element={<Layout/>}>
     <Route index element={<Dashboard/>}/>
     <Route path='applyleave' element={<ApplyLeave/>}/>
+    <Route path='leaveapproval' element={<LeaveApprovalPage/>}/>
     </Route>
     </>
   )
