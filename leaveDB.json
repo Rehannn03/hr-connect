@@ -1,0 +1,6 @@
+[
+  { id: 1, employeeName: 'John Doe', fromDate: '2024-03-04', toDate: '2024-03-08', reason: 'Vacation', status: 'pending' },
+  { id: 2, employeeName: 'Jane Smith', fromDate: '2024-03-11', toDate: '2024-03-15', reason: 'Sick Leave', status: 'pending' },
+  { id: 3, employeeName: 'Mike Lee', fromDate: '2024-03-18', toDate: '2024-03-22', reason: 'Personal Leave', status: 'pending' },
+  { id: 4, employeeName: 'Swaan Lee', fromDate: '2024-03-20', toDate: '2024-03-22', reason: 'Personal Leave', status: 'pending' },
+];
