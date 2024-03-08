@@ -1,9 +1,13 @@
 import React from 'react'
-import { DASHBOARD_SIDEBAR_BOTTOM_LINKS } from '../../lib/constants/navigation'
-import { DASHBOARD_SIDEBAR_LINKS } from '../../lib/constants/navigation'
+import { ADMIN_SIDEBAR_LINKS, DASHBOARD_SIDEBAR_BOTTOM_LINKS, EMPLOYEE_SIDEBAR_LINKS } from '../../lib/constants/navigation'
 import { Link, useLocation } from 'react-router-dom'
-
+import { useContext } from 'react'
+import { UserRoleContext } from '../../context/UserRole'
 function Sidebar() {
+
+    const {userRole}=useContext(UserRoleContext)
+    
+    const sideBarLinks = userRole==='admin'?ADMIN_SIDEBAR_LINKS:EMPLOYEE_SIDEBAR_LINKS
   return (
     <div className='bg-neutral-900 w-60 p-3 flex flex-col text-white'>
         <div className='flex items-center gap-2 px-1 py-3'>
@@ -12,7 +16,7 @@ function Sidebar() {
         </div>
         <div className='flex-1 py-8 flex flex-col gap-0.5'>
             {
-                DASHBOARD_SIDEBAR_LINKS.map((item)=>{
+                sideBarLinks.map((item)=>{
                     return <SidebarLink key={item.key} item={item}/>
                 })
             }

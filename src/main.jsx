@@ -6,10 +6,13 @@ import { RouterProvider, Routes, createBrowserRouter, createRoutesFromElements,R
 import Login from './Pages/Login/Login.jsx'
 import Dashboard from './Layout/Dashboard/Dashboard.jsx'
 import Layout from './Layout/Layout.jsx'
-import ApplyLeave from './Pages/Apply Leave/ApplyLeave.jsx'
+import ApplyLeave from './Pages/Employee/Apply Leave/ApplyLeave.jsx'
 import LeaveApprovalPage from './Pages/Leave Approval/LeaveApproval.jsx'
+import AddUser from './Pages/Add User/AddUser.jsx'
+
 const router = createBrowserRouter(
   createRoutesFromElements(
+    
     <>
     <Route path="/" element={<App/>}>
     <Route index element={<Login/>}/>
@@ -17,12 +20,18 @@ const router = createBrowserRouter(
       
 
     </Route>
-    <Route path='/dashboard' element={<Layout/>}>
+    <Route path='/dashboard/admin' element={<Layout/>}>
     <Route index element={<Dashboard/>}/>
-    <Route path='applyleave' element={<ApplyLeave/>}/>
     <Route path='leaveapproval' element={<LeaveApprovalPage/>}/>
+    <Route path='addUser' element={<AddUser/>}/>
     </Route>
+    <Route path='/dashboard/employee' element={<Layout/>}>
+      <Route index element={<Dashboard/>}/>
+      <Route path='applyleave' element={<ApplyLeave/>}/>
+      
+      </Route>
     </>
+    
   )
 )
 

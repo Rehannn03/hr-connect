@@ -9,44 +9,47 @@ import {
 	HiOutlineCog
 } from 'react-icons/hi'
 import { CiLogout } from "react-icons/ci";
-export const DASHBOARD_SIDEBAR_LINKS = [
+export const ADMIN_SIDEBAR_LINKS = [
 	{
 		key: 1,
 		label: 'Dashboard',
-		path: '/dashboard',
+		path: '/dashboard/admin',
+		icon: <HiOutlineViewGrid />
+	},
+	{
+		key:2,
+		label: 'Leave Approval',
+		path: '/dashboard/admin/leaveapproval',
+		icon: <HiOutlineShoppingCart />
+	},
+	{
+		key: 3,
+		label: 'Add Users',
+		path: '/dashboard/admin/addUser',
+		icon: <HiOutlineUsers />
+	}
+]
+export const EMPLOYEE_SIDEBAR_LINKS = [
+	{
+		key: 1,
+		label: 'Dashboard',
+		path: '/dashboard/employee',
 		icon: <HiOutlineViewGrid />
 	},
 	{
 		key: 2,
 		label: 'Apply leave',
-		path: '/dashboard/applyleave',
+		path: '/dashboard/employee/applyleave',
 		icon: <HiOutlineCube />
 	},
 	{
 		key:3,
-		label: 'Leave Approval',
-		path: '/dashboard/leaveapproval',
+		label: 'Leave Record',
+		path: '/dashboard/employee/leaveRecord',
 		icon: <HiOutlineShoppingCart />
-	},
-	{
-		key: 4,
-		label: 'Customers',
-		path: '/dashboard/customers',
-		icon: <HiOutlineUsers />
-	},
-	{
-		key: 5,
-		label: 'Transactions',
-		path: '/dashboard/transactions',
-		icon: <HiOutlineDocumentText />
-	},
-	{
-		key: 6,
-		label: 'Messages',
-		path: '/dashboard/messages',
-		icon: <HiOutlineAnnotation />
 	}
 ]
+
 
 export const DASHBOARD_SIDEBAR_BOTTOM_LINKS = [
 	{

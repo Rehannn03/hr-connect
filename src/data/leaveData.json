@@ -1,0 +1,84 @@
+{
+  "leaves": [
+    {
+      "employeeName": "Amelia Garcia",
+      "fromDate": "2025-09-21",
+      "toDate": "2025-10-12",
+      "reason": "Paternity Leave",
+      "status": "Pending",
+      "id": "1"
+    },
+    {
+      "employeeName": "Henry Walker",
+      "fromDate": "2024-09-18",
+      "toDate": "2024-07-25",
+      "reason": "Relocation",
+      "status": "Approved",
+      "id": "2"
+    },
+    {
+      "employeeName": "Jacob Young",
+      "fromDate": "2025-10-06",
+      "toDate": "2025-08-03",
+      "reason": "Medical Leave",
+      "status": "Pending",
+      "id": "3"
+    },
+    {
+      "employeeName": "Francis Morgan",
+      "fromDate": "2024-12-26",
+      "toDate": "2024-06-05",
+      "reason": "Personal Day",
+      "status": "Approved",
+      "id": "4"
+    },
+    {
+      "employeeName": "Emily Jones",
+      "fromDate": "2024-05-18",
+      "toDate": "2024-08-13",
+      "reason": "Continuing Education",
+      "status": "Approved (Documentation Required)",
+      "id": "5"
+    },
+    {
+      "employeeName": "Gloria Sanchez",
+      "fromDate": "2024-02-06",
+      "toDate": "2024-12-14",
+      "reason": "Bereavement Leave",
+      "status": "Pending",
+      "id": "6"
+    },
+    {
+      "employeeName": "Emily Jones",
+      "fromDate": "2024-08-17",
+      "toDate": "2024-05-28",
+      "reason": "Relocation",
+      "status": "Submitted",
+      "id": "7"
+    },
+    {
+      "employeeName": "Chloe Jackson",
+      "fromDate": "2025-01-04",
+      "toDate": "2025-04-01",
+      "reason": "Maternity Leave",
+      "status": "Approved (Documentation Required)",
+      "id": "8"
+    },
+    {
+      "employeeName": "Isabella Rodriguez",
+      "fromDate": "2025-10-19",
+      "toDate": "2025-07-04",
+      "reason": "Personal Day",
+      "status": "Approved (Documentation Required)",
+      "id": "9"
+    },
+    {
+      "employeeName": "Gloria Sanchez",
+      "fromDate": "2024-06-27",
+      "toDate": "2024-03-25",
+      "reason": "Bereavement Leave",
+      "status": "Pending",
+      "id": "10"
+    }
+  ]
+}
