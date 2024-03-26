@@ -55,7 +55,33 @@ const viewInfo=asyncHandler(async(req,res)=>{
 })
 
 const getLeaves=asyncHandler(async(req,res)=>{
-    const leaves=await Leave.find()
+    const leaves=await Leave.aggregate([
+        
+            {
+              $lookup: {
+                from: "users", 
+                localField: "employee", 
+                foreignField: "_id", 
+                as: "employeeDetails"
+              }
+            },
+            {
+              $unwind: "$employeeDetails" 
+            },
+            {
+              $project: {
+                _id: 1, 
+                "employeeDetails.username": 1, 
+                leaveType: 1,
+                fromDate: 1,
+                toDate: 1,
+                status: 1,
+                createdAt: 1,
+                updatedAt: 1,
+              }
+            }
+          
+    ])
     return res.status(200).json(
         new ApiResponse(
             200,
@@ -67,17 +93,28 @@ const getLeaves=asyncHandler(async(req,res)=>{
     )
 })
 
-const leaveApplication=asyncHandler(async(req,res)=>{
-    const leave = Leave.find()
+const leaveApplicationStatus=asyncHandler(async(req,res)=>{
     const {status}=req.body
-
-    if(status==='approved'){
-        leave.status='approved'
-    }
-    else if(status==='rejected'){
-        leave.status='rejected'
-    }
+    const leaveId=req.params.id
+    const leave=await Leave.findByIdAndUpdate(
+        leaveId,
+        {
+            status:status
+        },
+        {
+            new:true
+        }
+    )
     
+    return res.status(200).json(
+        new ApiResponse(
+            200,
+            {
+                leave
+            },
+            "Leave Status Updated"
+        )
+    )
 
 
 
@@ -86,4 +123,5 @@ export {
     addUser,
     viewInfo,
     getLeaves,
+    leaveApplicationStatus
 }

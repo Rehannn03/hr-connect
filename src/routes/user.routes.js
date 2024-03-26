@@ -7,7 +7,7 @@ const router = Router()
 
 router.post('/register',upload.single('profilePicture'),addUser)
 router.post('/login',upload.none(),loginUser)
-router.post('/logout',verifyJWT,logoutUser)
+router.get('/logout',verifyJWT,logoutUser)
 router.post('/change-password',verifyJWT,changePassword)
 router.get('/user',verifyJWT,getUser)
 

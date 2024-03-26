@@ -36,7 +36,7 @@ const loginUser= asyncHandler(async(req,res)=>{
         httpOnly:true,
         secure:true,
         sameSite:'None',
-        domain:'localhost',
+        origin:'http://localhost:5173',
     }
     return res
     .status(200)
